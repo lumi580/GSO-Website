@@ -23,9 +23,7 @@ const columns = [
   {
     title: "Support",
     links: [
-      { label: "Funding", href: "/funding" },
       { label: "Advocacy", href: "/advocacy" },
-      { label: "Resources", href: "/resources" },
       { label: "Elections", href: "/elections" },
     ],
   },
@@ -33,7 +31,6 @@ const columns = [
     title: "Transparency",
     links: [
       { label: "Reports", href: "/transparency" },
-      { label: "News", href: "/news" },
       { label: "Media", href: "/media" },
       { label: "Contact", href: "/contact" },
     ],

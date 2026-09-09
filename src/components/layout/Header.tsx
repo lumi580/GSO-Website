@@ -8,9 +8,6 @@ const navItems = [
   { label: "Leadership", href: "/leadership" },
   { label: "Committees", href: "/committees" },
   { label: "Events", href: "/events" },
-  { label: "Funding", href: "/funding" },
-  { label: "Resources", href: "/resources" },
-  { label: "News", href: "/news" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -47,7 +44,7 @@ export default function Header() {
           : "bg-transparent"
       )}
     >
-      <div className="container-page flex h-16 items-center justify-between">
+      <div className="container-page flex h-16 items-center gap-6">
         <Link to="/" className="flex items-center gap-3 group">
           <span className="inline-flex h-9 w-9 items-center justify-center rounded-md bg-maroon text-primary-foreground font-serif text-lg">
             G
@@ -72,7 +69,7 @@ export default function Header() {
           </div>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center gap-1 ml-auto">
           {navItems.map((item) => (
             <NavLink
               key={item.href}
@@ -93,7 +90,7 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 ml-auto lg:ml-0">
           <button
             aria-label="Toggle dark mode"
             onClick={() => setDark((v) => !v)}
