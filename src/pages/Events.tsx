@@ -26,7 +26,7 @@ export default function Events() {
             {events.map((event, i) => (
               <Reveal key={event.title} delay={i * 0.05}>
                 <div className="group grid grid-cols-[100px_1fr_auto] md:grid-cols-[140px_1fr_auto_auto] gap-4 md:gap-8 items-center px-6 md:px-8 py-6 border-b border-border last:border-b-0 hover:bg-secondary/50 transition-colors">
-                  <div className="font-serif text-3xl md:text-4xl text-maroon">
+                  <div className="font-serif text-3xl md:text-4xl text-maroon-ink">
                     {event.date}
                   </div>
 
@@ -43,7 +43,7 @@ export default function Events() {
                     </div>
                   </div>
 
-                  <button className="hidden md:inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-sm hover:border-maroon hover:text-maroon transition">
+                  <button className="hidden md:inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-sm hover:border-maroon hover:text-maroon-ink transition">
                     <QrCode className="h-4 w-4" />
                     Check-in
                   </button>

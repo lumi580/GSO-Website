@@ -55,14 +55,14 @@ export default function Advocacy() {
           {items.map((item, i) => (
             <Reveal key={item.title} delay={i * 0.05}>
               <div className="group flex items-start gap-4 rounded-2xl border border-border bg-card p-6 hover:border-maroon/50 transition">
-                <div className="mt-1 text-2xl font-serif text-maroon">→</div>
+                <div className="mt-1 text-2xl font-serif text-maroon-ink">→</div>
                 <div className="flex-1">
-                  <h3 className="font-serif text-xl">{item.title}</h3>
+                  <h3 className="text-xl">{item.title}</h3>
                   <p className="mt-1 text-sm text-muted-foreground">
                     {item.description}
                   </p>
                 </div>
-                <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-maroon group-hover:translate-x-0.5 transition-all" />
+                <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-maroon-ink group-hover:translate-x-0.5 transition-all" />
               </div>
             </Reveal>
           ))}

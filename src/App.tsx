@@ -4,7 +4,7 @@ import Index from "@/pages/Index";
 import About from "@/pages/About";
 import Leadership from "@/pages/Leadership";
 import Structure from "@/pages/Structure";
-import Committees from "@/pages/Committees";
+import Clubs from "@/pages/Clubs";
 import Meetings from "@/pages/Meetings";
 import Events from "@/pages/Events";
 import Advocacy from "@/pages/Advocacy";
@@ -13,7 +13,6 @@ import GoverningDocuments from "@/pages/GoverningDocuments";
 import Transparency from "@/pages/Transparency";
 import Media from "@/pages/Media";
 import GetInvolved from "@/pages/GetInvolved";
-import Contact from "@/pages/Contact";
 import NotFound from "@/pages/NotFound";
 
 export default function App() {
@@ -25,7 +24,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/leadership" element={<Leadership />} />
           <Route path="/structure" element={<Structure />} />
-          <Route path="/committees" element={<Committees />} />
+          <Route path="/clubs" element={<Clubs />} />
           <Route path="/meetings" element={<Meetings />} />
           <Route path="/events" element={<Events />} />
           <Route path="/advocacy" element={<Advocacy />} />
@@ -34,7 +33,6 @@ export default function App() {
           <Route path="/transparency" element={<Transparency />} />
           <Route path="/media" element={<Media />} />
           <Route path="/get-involved" element={<GetInvolved />} />
-          <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

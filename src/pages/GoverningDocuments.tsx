@@ -52,16 +52,16 @@ export default function GoverningDocuments() {
             <Reveal key={doc.title} delay={i * 0.04}>
               <div className="group rounded-2xl border border-border bg-card p-6 hover:border-maroon/50 transition-all hover:shadow-lg">
                 <div className="flex items-start justify-between">
-                  <FileText className="h-6 w-6 text-maroon" />
+                  <FileText className="h-6 w-6 text-maroon-ink" />
                   <span className="text-xs text-muted-foreground">
                     {doc.version}
                   </span>
                 </div>
 
-                <h3 className="mt-4 font-serif text-xl">{doc.title}</h3>
+                <h3 className="mt-4 text-xl">{doc.title}</h3>
 
                 <div className="mt-4 flex items-center justify-between text-sm">
-                  <button className="inline-flex items-center gap-1.5 text-maroon font-medium hover:underline">
+                  <button className="inline-flex items-center gap-1.5 text-maroon-ink font-medium hover:underline">
                     <Download className="h-4 w-4" />
                     Download PDF
                   </button>

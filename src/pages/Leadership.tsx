@@ -79,7 +79,7 @@ export default function Leadership() {
                     </span>
                   </div>
                   <div className="absolute bottom-4 left-4 text-white">
-                    <div className="text-xs uppercase tracking-[0.16em] text-gold">
+                    <div className="text-xs uppercase tracking-[0.12em] text-gold">
                       {member.role}
                     </div>
                     <div className="mt-1 font-serif text-2xl">{member.name}</div>
@@ -93,12 +93,12 @@ export default function Leadership() {
 
                   <div className="mt-5 space-y-2 text-sm">
                     <div className="flex items-center gap-2 text-foreground/80">
-                      <Clock className="h-4 w-4 text-maroon" />
+                      <Clock className="h-4 w-4 text-maroon-ink" />
                       Office hours: {member.hours}
                     </div>
                     <a
                       href={`mailto:${member.email}`}
-                      className="flex items-center gap-2 text-maroon hover:underline"
+                      className="flex items-center gap-2 text-maroon-ink hover:underline"
                     >
                       <Mail className="h-4 w-4" />
                       {member.email}

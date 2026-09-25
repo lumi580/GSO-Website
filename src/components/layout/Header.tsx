@@ -2,13 +2,14 @@ import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, Moon, Sun, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import gsoSeal from "@/assets/gso-seal.png";
 
 const navItems = [
   { label: "About", href: "/about" },
   { label: "Leadership", href: "/leadership" },
-  { label: "Committees", href: "/committees" },
+  { label: "Clubs", href: "/clubs" },
   { label: "Events", href: "/events" },
-  { label: "Contact", href: "/contact" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export default function Header() {
@@ -46,14 +47,18 @@ export default function Header() {
     >
       <div className="container-page flex h-16 items-center gap-6">
         <Link to="/" className="flex items-center gap-3 group">
-          <span className="inline-flex h-9 w-9 items-center justify-center rounded-md bg-maroon text-primary-foreground font-serif text-lg">
-            G
-          </span>
+          <img
+            src={gsoSeal}
+            alt=""
+            width={576}
+            height={576}
+            className="h-9 w-9 shrink-0 object-contain"
+          />
           <div className="leading-tight">
             <div
               className={cn(
                 "text-[13px] font-semibold tracking-wide",
-                solid ? "text-foreground" : "text-white"
+                solid ? "text-foreground" : "text-ink"
               )}
             >
               Brooklyn College GSO
@@ -61,7 +66,7 @@ export default function Header() {
             <div
               className={cn(
                 "text-[10px] uppercase tracking-[0.18em]",
-                solid ? "text-muted-foreground" : "text-white/70"
+                solid ? "text-muted-foreground" : "text-ink/75"
               )}
             >
               Graduate Student Organization
@@ -78,10 +83,10 @@ export default function Header() {
                 cn(
                   "relative px-3 py-2 text-sm rounded-md transition-colors",
                   solid
-                    ? "text-foreground/70 hover:text-maroon hover:bg-secondary"
-                    : "text-white/85 hover:text-white hover:bg-white/10",
+                    ? "text-foreground/70 hover:text-maroon-ink hover:bg-secondary"
+                    : "text-ink/85 hover:text-ink hover:bg-white/25",
                   isActive &&
-                    (solid ? "text-maroon font-medium" : "text-white font-medium")
+                    (solid ? "text-maroon-ink font-medium" : "text-ink font-semibold")
                 )
               }
             >
@@ -98,25 +103,27 @@ export default function Header() {
               "hidden sm:inline-flex h-9 w-9 items-center justify-center rounded-full transition-colors",
               solid
                 ? "hover:bg-secondary text-foreground/80"
-                : "hover:bg-white/10 text-white"
+                : "hover:bg-white/25 text-ink"
             )}
           >
             {dark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
           </button>
 
-          <Link
-            to="/get-involved"
+          <a
+            href="https://forms.gle/YQNXsVhWvFYRuT3x8"
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden md:inline-flex items-center rounded-full bg-maroon px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm hover:bg-maroon-dark transition-colors"
           >
             Join GSO
-          </Link>
+          </a>
 
           <button
             aria-label="Toggle menu"
             onClick={() => setOpen((v) => !v)}
             className={cn(
               "lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-md",
-              solid ? "text-foreground" : "text-white"
+              solid ? "text-foreground" : "text-ink"
             )}
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -135,7 +142,7 @@ export default function Header() {
                   cn(
                     "rounded-md px-3 py-2.5 text-sm transition-colors",
                     isActive
-                      ? "bg-secondary text-maroon font-medium"
+                      ? "bg-secondary text-maroon-ink font-medium"
                       : "text-foreground/80 hover:bg-secondary"
                   )
                 }
@@ -143,12 +150,14 @@ export default function Header() {
                 {item.label}
               </NavLink>
             ))}
-            <Link
-              to="/get-involved"
+            <a
+              href="https://forms.gle/YQNXsVhWvFYRuT3x8"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-2 inline-flex items-center justify-center rounded-full bg-maroon px-4 py-2.5 text-sm font-medium text-primary-foreground"
             >
               Join GSO
-            </Link>
+            </a>
           </nav>
         </div>
       )}

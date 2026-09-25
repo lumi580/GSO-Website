@@ -38,7 +38,7 @@ export default function About() {
         <div className="container-page grid md:grid-cols-2 gap-14">
           <Reveal>
             <div>
-              <div className="text-xs uppercase tracking-[0.2em] text-maroon font-semibold">
+              <div className="text-xs uppercase tracking-[0.14em] text-maroon-ink font-semibold">
                 Mission
               </div>
               <h2 className="mt-3 text-3xl font-serif">
@@ -55,7 +55,7 @@ export default function About() {
 
           <Reveal delay={0.1}>
             <div>
-              <div className="text-xs uppercase tracking-[0.2em] text-maroon font-semibold">
+              <div className="text-xs uppercase tracking-[0.14em] text-maroon-ink font-semibold">
                 Vision
               </div>
               <h2 className="mt-3 text-3xl font-serif">
@@ -73,7 +73,7 @@ export default function About() {
 
       <section className="py-24 bg-secondary/50 border-y border-border">
         <div className="container-page">
-          <div className="text-xs uppercase tracking-[0.2em] text-maroon font-semibold">
+          <div className="text-xs uppercase tracking-[0.14em] text-maroon-ink font-semibold">
             Core Values
           </div>
           <h2 className="mt-3 text-4xl font-serif max-w-2xl">
@@ -84,7 +84,7 @@ export default function About() {
             {values.map((value, i) => (
               <Reveal key={value.number} delay={i * 0.08}>
                 <div className="rounded-2xl bg-card border border-border p-7 h-full">
-                  <div className="text-4xl font-serif text-maroon">
+                  <div className="text-4xl font-serif text-maroon-ink">
                     {value.number}
                   </div>
                   <div className="mt-4 font-semibold">{value.title}</div>
@@ -112,7 +112,7 @@ export default function About() {
           </Reveal>
 
           <div>
-            <div className="text-xs uppercase tracking-[0.2em] text-maroon font-semibold">
+            <div className="text-xs uppercase tracking-[0.14em] text-maroon-ink font-semibold">
               President's Welcome
             </div>
             <h2 className="mt-3 text-3xl md:text-4xl font-serif text-balance">

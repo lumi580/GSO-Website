@@ -51,7 +51,7 @@ export default function Media() {
           {collections.map((collection) => (
             <button
               key={collection}
-              className="rounded-full border border-border px-5 py-2 text-sm hover:border-maroon hover:text-maroon transition"
+              className="rounded-full border border-border px-5 py-2 text-sm hover:border-maroon hover:text-maroon-ink transition"
             >
               {collection}
             </button>

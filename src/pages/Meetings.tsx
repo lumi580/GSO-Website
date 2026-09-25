@@ -35,7 +35,7 @@ export default function Meetings() {
               <Reveal key={meeting.title} delay={i * 0.06}>
                 <div className="flex items-center gap-6 rounded-2xl border border-border bg-card p-6">
                   <div className="text-center min-w-[70px]">
-                    <div className="font-serif text-3xl text-maroon">
+                    <div className="font-serif text-3xl text-maroon-ink">
                       {meeting.day}
                     </div>
                     <div className="text-xs uppercase tracking-[0.14em] text-muted-foreground">
@@ -48,7 +48,7 @@ export default function Meetings() {
                       {meeting.detail}
                     </div>
                   </div>
-                  <button className="text-sm text-maroon font-medium">
+                  <button className="text-sm text-maroon-ink font-medium">
                     Agenda
                   </button>
                 </div>
@@ -65,7 +65,7 @@ export default function Meetings() {
                   href="#"
                   className="flex items-center gap-3 rounded-xl border border-border bg-card p-4 hover:border-maroon/50 transition"
                 >
-                  <item.icon className="h-4 w-4 text-maroon" />
+                  <item.icon className="h-4 w-4 text-maroon-ink" />
                   <span className="text-sm font-medium">{item.label}</span>
                 </a>
               ))}

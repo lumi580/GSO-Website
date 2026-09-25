@@ -17,7 +17,7 @@ export default function PageHero({
   return (
     <section className="pt-32 pb-16 bg-gradient-to-b from-secondary/60 to-background border-b border-border">
       <div className="container-page">
-        <div className="text-xs uppercase tracking-[0.2em] text-maroon font-semibold mb-4">
+        <div className="text-xs uppercase tracking-[0.14em] text-maroon-ink font-semibold mb-4">
           {eyebrow}
         </div>
         <h1 className="text-4xl md:text-6xl font-serif text-balance max-w-4xl">

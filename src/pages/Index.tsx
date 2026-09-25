@@ -3,8 +3,6 @@ import {
   ArrowRight,
   ArrowUpRight,
   BookOpen,
-  Calendar,
-  GraduationCap,
   HandCoins,
   ShieldCheck,
   Sparkles,
@@ -13,26 +11,22 @@ import {
 } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import Counter from "@/components/Counter";
-import heroCampus from "@/assets/hero-campus.jpg";
-import campusBuilding from "@/assets/campus-building.jpg";
-import community from "@/assets/community.jpg";
+import heroCampus from "@/assets/CE-230118-Drone-05-2.jpg";
+import campusBuilding from "@/assets/NEWS-Default-1-Featured.jpg";
 
 const stats = [
-  { value: 2600, suffix: "+", label: "Graduate Students" },
-  { value: 40, suffix: "+", label: "Events / year" },
-  { value: 24, suffix: "", label: "Student Leaders" },
-  { value: 180, suffix: "K", label: "Funding awarded" },
+  { value: 2751, suffix: "+", label: "Graduate Students" },
 ];
 
 const pillars = [
   {
     icon: HandCoins,
-    title: "Funding Opportunities",
+    title: "Funding Clubs",
     body: "Conference travel grants, research funding, and emergency support for graduate students.",
   },
   {
     icon: BookOpen,
-    title: "Research Support",
+    title: "Student Activities",
     body: "A symposium, faculty connections, and grant tracking to advance your scholarship.",
   },
   {
@@ -55,50 +49,48 @@ export default function Index() {
         <div className="absolute inset-0 -z-10">
           <img
             src={heroCampus}
-            alt="Brooklyn College campus at golden hour"
+            alt="Aerial view of the Brooklyn College campus"
             width={1920}
-            height={1200}
+            height={770}
             className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-[var(--maroon-dark)]/85" />
         </div>
 
-        <div className="container-page pb-20 pt-40 text-white">
+        <div className="container-page pb-20 pt-40 text-ink">
           <Reveal y={30} className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/5 px-3 py-1 text-xs uppercase tracking-[0.2em] text-white/85 backdrop-blur">
-              <Sparkles className="h-3 w-3 text-gold" />
+            <div className="inline-flex items-center gap-2 rounded-full border border-ink/25 bg-white/25 px-3 py-1 text-xs uppercase tracking-[0.14em] font-semibold text-ink backdrop-blur">
+              <Sparkles className="h-3 w-3 text-maroon-ink" />
               Graduate Student Organization · Est. Brooklyn College
             </div>
 
             <h1 className="mt-6 text-5xl md:text-7xl lg:text-[5.5rem] font-serif leading-[0.98] text-balance">
               Representing graduate students.
               <br />
-              <span className="text-gold-soft italic">Leading change.</span>
+              <span className="text-maroon-ink italic">Leading change.</span>
               <br />
               Building community.
             </h1>
 
-            <p className="mt-6 max-w-xl text-lg text-white/80 text-balance">
+            <p className="mt-6 max-w-xl text-lg font-medium text-ink text-balance [text-shadow:0_1px_2px_rgba(255,255,255,0.95),0_0_14px_rgba(255,255,255,0.9),0_0_30px_rgba(255,255,255,0.7)]">
               The official governing body of Brooklyn College's graduate
-              community — advocating, funding, and connecting more than 2,600
+              community — advocating, funding, and connecting more than 2,751
               scholars across every discipline.
             </p>
 
-            <div className="mt-9 flex flex-wrap gap-3">
-              <Link
-                to="/get-involved"
-                className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-maroon-dark shadow-lg transition-transform hover:scale-[1.02]"
-              >
-                Join GSO
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-              </Link>
-              <Link
-                to="/about"
-                className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/5 px-6 py-3.5 text-sm font-medium text-white backdrop-blur hover:bg-white/10"
-              >
-                Learn More
-              </Link>
-            </div>
+          </Reveal>
+
+          {/* Outside the max-w-4xl block above, so it centres on the page
+              container rather than on the headline column. */}
+          <Reveal y={30} delay={0.12} className="mt-9 flex justify-center">
+            <a
+              href="https://forms.gle/YQNXsVhWvFYRuT3x8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-maroon-dark shadow-lg transition-transform hover:scale-[1.02]"
+            >
+              Join GSO
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            </a>
           </Reveal>
         </div>
 
@@ -108,14 +100,14 @@ export default function Index() {
       {/* Stats */}
       <section className="border-b border-border bg-background">
         <div className="container-page py-14">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 gap-8">
             {stats.map((stat, i) => (
               <Reveal key={stat.label} delay={i * 0.08}>
-                <div>
-                  <div className="text-4xl md:text-5xl font-serif text-maroon">
+                <div className="text-center">
+                  <div className="text-4xl md:text-5xl font-serif text-maroon-ink">
                     <Counter to={stat.value} suffix={stat.suffix} />
                   </div>
-                  <div className="mt-2 text-sm uppercase tracking-[0.16em] text-muted-foreground">
+                  <div className="mt-2 text-sm uppercase tracking-[0.12em] text-muted-foreground">
                     {stat.label}
                   </div>
                 </div>
@@ -129,7 +121,7 @@ export default function Index() {
       <section className="py-28">
         <div className="container-page grid md:grid-cols-12 gap-12 items-start">
           <div className="md:col-span-5">
-            <div className="text-xs uppercase tracking-[0.2em] text-maroon font-semibold">
+            <div className="text-xs uppercase tracking-[0.14em] text-maroon-ink font-semibold">
               Our Mission
             </div>
             <h2 className="mt-4 text-4xl md:text-5xl font-serif text-balance">
@@ -140,15 +132,15 @@ export default function Index() {
             <p>
               The Graduate Student Organization is the officially chartered
               governing body representing all matriculated graduate students at
-              Brooklyn College — City University of New York.
+              Brooklyn College.
             </p>
             <p className="text-muted-foreground">
-              We fund research, host convenings, defend student rights, and hold
+              We host convenings, advocate for student rights, and hold
               a seat at every table where decisions are made about graduate life.
             </p>
             <Link
               to="/about"
-              className="inline-flex items-center gap-2 text-maroon font-medium hover:gap-3 transition-all"
+              className="inline-flex items-center gap-2 text-maroon-ink font-medium hover:gap-3 transition-all"
             >
               Read our story
               <ArrowUpRight className="h-4 w-4" />
@@ -162,7 +154,7 @@ export default function Index() {
         <div className="container-page">
           <Reveal>
             <div className="max-w-2xl">
-              <div className="text-xs uppercase tracking-[0.2em] text-maroon font-semibold">
+              <div className="text-xs uppercase tracking-[0.14em] text-maroon-ink font-semibold">
                 What we do
               </div>
               <h2 className="mt-3 text-4xl md:text-5xl font-serif text-balance">
@@ -175,10 +167,10 @@ export default function Index() {
             {pillars.map((pillar, i) => (
               <Reveal key={pillar.title} delay={i * 0.08}>
                 <div className="group h-full rounded-2xl border border-border bg-card p-7 transition-all hover:border-maroon/40 hover:shadow-xl hover:-translate-y-1">
-                  <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-maroon/10 text-maroon group-hover:bg-maroon group-hover:text-primary-foreground transition-colors">
+                  <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-maroon/10 text-maroon-ink group-hover:bg-maroon group-hover:text-primary-foreground transition-colors">
                     <pillar.icon className="h-5 w-5" />
                   </div>
-                  <h3 className="mt-6 text-xl font-serif">{pillar.title}</h3>
+                  <h3 className="mt-6 text-xl">{pillar.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                     {pillar.body}
                   </p>
@@ -189,68 +181,13 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Community */}
-      <section className="py-28">
-        <div className="container-page grid lg:grid-cols-2 gap-14 items-center">
-          <Reveal>
-            <div className="relative overflow-hidden rounded-3xl aspect-[5/4]">
-              <img
-                src={community}
-                alt="Graduate students collaborating"
-                loading="lazy"
-                width={1600}
-                height={1000}
-                className="h-full w-full object-cover"
-              />
-            </div>
-          </Reveal>
-
-          <div>
-            <div className="text-xs uppercase tracking-[0.2em] text-maroon font-semibold">
-              Community
-            </div>
-            <h2 className="mt-3 text-4xl md:text-5xl font-serif text-balance">
-              Scholarship is a shared endeavor.
-            </h2>
-            <p className="mt-5 text-lg text-muted-foreground max-w-lg">
-              From orientation to graduation, GSO is a network of peers,
-              mentors, and advocates who ensure no graduate student navigates
-              their program alone.
-            </p>
-
-            <div className="mt-8 grid grid-cols-2 gap-4">
-              <Link
-                to="/events"
-                className="group rounded-xl border border-border p-5 hover:border-maroon/50 transition-colors"
-              >
-                <Calendar className="h-5 w-5 text-maroon" />
-                <div className="mt-3 font-medium">Upcoming Events</div>
-                <div className="text-sm text-muted-foreground mt-1">
-                  Symposium, career fair, socials.
-                </div>
-              </Link>
-              <Link
-                to="/leadership"
-                className="group rounded-xl border border-border p-5 hover:border-maroon/50 transition-colors"
-              >
-                <GraduationCap className="h-5 w-5 text-maroon" />
-                <div className="mt-3 font-medium">Meet the Board</div>
-                <div className="text-sm text-muted-foreground mt-1">
-                  Executive &amp; representatives.
-                </div>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Governance CTA */}
       <section className="relative isolate overflow-hidden">
         <img
           src={campusBuilding}
           alt=""
-          width={1600}
-          height={1000}
+          width={1200}
+          height={960}
           loading="lazy"
           className="absolute inset-0 -z-10 h-full w-full object-cover"
         />
@@ -258,7 +195,7 @@ export default function Index() {
 
         <div className="container-page py-24 text-white grid lg:grid-cols-2 gap-10 items-center">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/25 px-3 py-1 text-xs uppercase tracking-[0.2em]">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/25 px-3 py-1 text-xs uppercase tracking-[0.14em]">
               <Vote className="h-3 w-3 text-gold" />
               Shared Governance
             </div>
@@ -290,11 +227,11 @@ export default function Index() {
       </section>
 
       {/* Contact */}
-      <section className="py-28">
+      <section id="contact" className="py-28">
         <div className="container-page">
           <div className="rounded-3xl border border-border bg-card p-10 md:p-14 grid md:grid-cols-2 gap-10 items-center">
             <div>
-              <div className="text-xs uppercase tracking-[0.2em] text-maroon font-semibold">
+              <div className="text-xs uppercase tracking-[0.14em] text-maroon-ink font-semibold">
                 Get in touch
               </div>
               <h2 className="mt-3 text-3xl md:text-4xl font-serif text-balance">
@@ -312,7 +249,7 @@ export default function Index() {
                 href="mailto:GSOPresident@brooklyn.cuny.edu"
                 className="block rounded-xl border border-border p-5 hover:border-maroon/50 transition"
               >
-                <div className="text-xs uppercase tracking-[0.16em] text-muted-foreground">
+                <div className="text-xs uppercase tracking-[0.12em] text-muted-foreground">
                   President
                 </div>
                 <div className="mt-1 font-medium">
@@ -323,7 +260,7 @@ export default function Index() {
                 href="mailto:officeassistant.bcgso@gmail.com"
                 className="block rounded-xl border border-border p-5 hover:border-maroon/50 transition"
               >
-                <div className="text-xs uppercase tracking-[0.16em] text-muted-foreground">
+                <div className="text-xs uppercase tracking-[0.12em] text-muted-foreground">
                   Office
                 </div>
                 <div className="mt-1 font-medium">

@@ -27,7 +27,7 @@ export default function Elections() {
             {timeline.map((item, i) => (
               <Reveal key={item.step} delay={i * 0.06}>
                 <div className="rounded-2xl border border-border bg-card p-6 h-full">
-                  <div className="text-xs uppercase tracking-[0.16em] text-maroon">
+                  <div className="text-xs uppercase tracking-[0.12em] text-maroon-ink">
                     {item.step}
                   </div>
                   <div className="mt-3 font-serif text-xl">{item.title}</div>
@@ -48,9 +48,9 @@ export default function Elections() {
               key={guide}
               className="rounded-2xl bg-card border border-border p-6"
             >
-              <Vote className="h-5 w-5 text-maroon" />
+              <Vote className="h-5 w-5 text-maroon-ink" />
               <div className="mt-3 font-serif text-lg">{guide}</div>
-              <a href="#" className="mt-2 inline-block text-sm text-maroon">
+              <a href="#" className="mt-2 inline-block text-sm text-maroon-ink">
                 Read →
               </a>
             </div>

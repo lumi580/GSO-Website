@@ -47,16 +47,16 @@ export default function GetInvolved() {
           {paths.map((path, i) => (
             <Reveal key={path.title} delay={i * 0.05}>
               <div className="group rounded-2xl border border-border bg-card p-7 h-full hover:border-maroon/50 hover:shadow-lg transition-all">
-                <div className="text-4xl font-serif text-maroon">
+                <div className="text-4xl font-serif text-maroon-ink">
                   {String(i + 1).padStart(2, "0")}
                 </div>
-                <h3 className="mt-4 font-serif text-2xl">{path.title}</h3>
+                <h3 className="mt-4 text-2xl">{path.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   {path.description}
                 </p>
                 <Link
-                  to="/contact"
-                  className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-maroon"
+                  to="/#contact"
+                  className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-maroon-ink"
                 >
                   Start
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />

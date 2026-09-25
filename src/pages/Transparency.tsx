@@ -30,7 +30,7 @@ export default function Transparency() {
         <div className="container-page grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat) => (
             <div key={stat.label}>
-              <div className="text-4xl md:text-5xl font-serif text-maroon">
+              <div className="text-4xl md:text-5xl font-serif text-maroon-ink">
                 <Counter to={stat.value} suffix={stat.suffix} />
               </div>
               <div className="mt-2 text-sm uppercase tracking-[0.14em] text-muted-foreground">
@@ -50,7 +50,7 @@ export default function Transparency() {
                 className="flex items-center justify-between rounded-2xl border border-border bg-card p-6 hover:border-maroon/50 transition"
               >
                 <span className="font-serif text-xl">{report}</span>
-                <span className="text-sm text-maroon font-medium">
+                <span className="text-sm text-maroon-ink font-medium">
                   Download →
                 </span>
               </a>

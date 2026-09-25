@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ExternalLink, Instagram, Mail, Phone } from "lucide-react";
+import gsoSeal from "@/assets/gso-seal.png";
 
 const columns = [
   {
@@ -15,7 +16,7 @@ const columns = [
     title: "Engage",
     links: [
       { label: "Events", href: "/events" },
-      { label: "Committees", href: "/committees" },
+      { label: "Clubs", href: "/clubs" },
       { label: "Meetings", href: "/meetings" },
       { label: "Get Involved", href: "/get-involved" },
     ],
@@ -32,7 +33,7 @@ const columns = [
     links: [
       { label: "Reports", href: "/transparency" },
       { label: "Media", href: "/media" },
-      { label: "Contact", href: "/contact" },
+      { label: "Contact", href: "/#contact" },
     ],
   },
 ];
@@ -43,9 +44,13 @@ export default function Footer() {
       <div className="container-page py-16 grid gap-12 md:grid-cols-12">
         <div className="md:col-span-4">
           <div className="flex items-center gap-3">
-            <span className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-maroon text-primary-foreground font-serif text-xl">
-              G
-            </span>
+            <img
+              src={gsoSeal}
+              alt=""
+              width={576}
+              height={576}
+              className="h-10 w-10 shrink-0 object-contain"
+            />
             <div>
               <div className="font-semibold">Brooklyn College GSO</div>
               <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
@@ -55,21 +60,21 @@ export default function Footer() {
           </div>
 
           <p className="mt-5 text-sm text-muted-foreground max-w-sm text-balance">
-            The official governing body representing more than 2,600 graduate
-            students at Brooklyn College — City University of New York.
+            The official governing body representing more than 2,751 graduate
+            students at Brooklyn College.
           </p>
 
           <div className="mt-6 space-y-2 text-sm">
             <a
               href="mailto:GSOPresident@brooklyn.cuny.edu"
-              className="flex items-center gap-2 text-foreground/80 hover:text-maroon"
+              className="flex items-center gap-2 text-foreground/80 hover:text-maroon-ink"
             >
               <Mail className="h-4 w-4" />
               GSOPresident@brooklyn.cuny.edu
             </a>
             <a
               href="tel:+17189515503"
-              className="flex items-center gap-2 text-foreground/80 hover:text-maroon"
+              className="flex items-center gap-2 text-foreground/80 hover:text-maroon-ink"
             >
               <Phone className="h-4 w-4" />
               718-951-5503
@@ -78,7 +83,7 @@ export default function Footer() {
               href="https://instagram.com/bc_gso"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-2 text-foreground/80 hover:text-maroon"
+              className="flex items-center gap-2 text-foreground/80 hover:text-maroon-ink"
             >
               <Instagram className="h-4 w-4" />
               @bc_gso
@@ -88,7 +93,7 @@ export default function Footer() {
 
         {columns.map((column) => (
           <div key={column.title} className="md:col-span-2">
-            <div className="text-xs font-semibold uppercase tracking-[0.16em] text-foreground/70">
+            <div className="text-xs font-semibold uppercase tracking-[0.12em] text-foreground/70">
               {column.title}
             </div>
             <ul className="mt-4 space-y-2">
@@ -96,7 +101,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     to={link.href}
-                    className="text-sm text-muted-foreground hover:text-maroon"
+                    className="text-sm text-muted-foreground hover:text-maroon-ink"
                   >
                     {link.label}
                   </Link>
@@ -117,7 +122,7 @@ export default function Footer() {
             href="https://www.brooklyn.edu/dosa/student-support-services/ce/government/gso"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-1 hover:text-maroon"
+            className="inline-flex items-center gap-1 hover:text-maroon-ink"
           >
             brooklyn.edu/dosa
             <ExternalLink className="h-3 w-3" />

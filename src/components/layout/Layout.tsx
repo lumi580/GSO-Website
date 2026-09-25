@@ -4,11 +4,20 @@ import Header from "./Header";
 import Footer from "./Footer";
 
 export default function Layout() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
+    // A hash means we're aiming at a section (e.g. /#contact); let the anchor
+    // win instead of snapping to the top.
+    if (hash) {
+      const el = document.querySelector(hash);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+        return;
+      }
+    }
     window.scrollTo(0, 0);
-  }, [pathname]);
+  }, [pathname, hash]);
 
   return (
     <div className="min-h-dvh flex flex-col">
