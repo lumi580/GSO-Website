@@ -17,9 +17,9 @@ function Row({
   onOpen: (photo: Photo) => void;
 }) {
   return (
-    <div className="group/row overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_6%,black_94%,transparent)]">
+    <div className="overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_6%,black_94%,transparent)]">
       <div
-        className={`flex w-max gap-4 pr-4 group-hover/row:[animation-play-state:paused] ${
+        className={`flex w-max gap-4 pr-4 ${
           reverse ? "animate-marquee-reverse" : "animate-marquee-slow"
         }`}
       >
