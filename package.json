@@ -6,6 +6,8 @@
   "description": "Website for the Brooklyn College Graduate Student Organization (GSO).",
   "scripts": {
     "dev": "vite",
+    "sync-events": "node scripts/sync-events.mjs",
+    "prebuild": "npm run sync-events",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "lint": "eslint ."

@@ -50,11 +50,11 @@ export default function Advocacy() {
         description="From individual academic appeals to campus-wide policy — the GSO advocates."
       />
 
-      <section className="py-20">
+      <section className="py-14 md:py-16">
         <div className="container-page grid md:grid-cols-2 gap-5">
           {items.map((item, i) => (
             <Reveal key={item.title} delay={i * 0.05}>
-              <div className="group flex items-start gap-4 rounded-2xl border border-border bg-card p-6 hover:border-maroon/50 transition">
+              <div className="group flex items-start gap-4 rounded-md border border-border bg-card p-6 hover:border-maroon/50 transition">
                 <div className="mt-1 text-2xl font-serif text-maroon-ink">→</div>
                 <div className="flex-1">
                   <h3 className="text-xl">{item.title}</h3>

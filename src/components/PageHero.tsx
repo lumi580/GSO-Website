@@ -15,16 +15,15 @@ export default function PageHero({
   children,
 }: PageHeroProps) {
   return (
-    <section className="pt-32 pb-16 bg-gradient-to-b from-secondary/60 to-background border-b border-border">
+    <section className="pt-32 pb-12 md:pt-36 md:pb-14 border-b border-border">
       <div className="container-page">
-        <div className="text-xs uppercase tracking-[0.14em] text-maroon-ink font-semibold mb-4">
+        <div className="eyebrow mb-6 flex items-center gap-3">
+          <span className="h-px w-8 bg-maroon-ink/60" />
           {eyebrow}
         </div>
-        <h1 className="text-4xl md:text-6xl font-serif text-balance max-w-4xl">
-          {title}
-        </h1>
+        <h1 className="text-5xl md:text-7xl text-balance max-w-5xl">{title}</h1>
         {description && (
-          <p className="mt-5 max-w-2xl text-lg text-muted-foreground text-balance">
+          <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted-foreground text-balance">
             {description}
           </p>
         )}

@@ -2,12 +2,13 @@ import { useEffect, useRef, useState } from "react";
 
 type CounterProps = {
   to: number;
+  prefix?: string;
   suffix?: string;
   duration?: number;
 };
 
 /** Counts up from zero the first time the number scrolls into view. */
-export default function Counter({ to, suffix = "", duration = 1800 }: CounterProps) {
+export default function Counter({ to, prefix = "", suffix = "", duration = 1800 }: CounterProps) {
   const ref = useRef<HTMLSpanElement>(null);
   const [value, setValue] = useState(0);
   const started = useRef(false);
@@ -40,6 +41,7 @@ export default function Counter({ to, suffix = "", duration = 1800 }: CounterPro
 
   return (
     <span ref={ref}>
+      {prefix}
       {value.toLocaleString()}
       {suffix}
     </span>

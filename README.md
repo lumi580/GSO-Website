@@ -3,7 +3,7 @@
 The website for the **Graduate Student Organization — Brooklyn College**.
 
 A single-page React application covering the GSO's public presence: governance
-and leadership, clubs, meetings, events, advocacy, elections, governing
+and leadership, clubs, events, advocacy, elections, governing
 documents, transparency reporting, media, and contact.
 
 ## Stack
@@ -67,7 +67,7 @@ from Google Fonts in `index.html`.
 
 ## Routes
 
-`/` · `/about` · `/leadership` · `/structure` · `/clubs` · `/meetings` ·
+`/` · `/about` · `/leadership` · `/structure` · `/clubs` ·
 `/events` · `/advocacy` · `/elections` ·
 `/governing-documents` · `/transparency` · `/media` · `/get-involved` ·
 `/contact` — anything else renders the 404 page.

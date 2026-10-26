@@ -8,34 +8,28 @@
    --bs-yellow #f3bd48, --bs-red #f24131, --bs-blue #0E3240,
    --bs-body-color #212529, --bs-light #f8f9fa.
 
-   BC sets body copy in Franklin Gothic ATF (Typekit, licensed), so we keep
-   Inter for UI and Instrument Serif for display headings.
+   Layout language is editorial: hairline rules, light
+   Fraunces display type, and Geist Mono for small uppercase labels.
 --------------------------------------------------------------------------- */
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Instrument Serif", "Playfair Display", ui-serif, Georgia, serif;
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Fraunces", ui-serif, Georgia, serif;
+  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, monospace;
 
-  --radius: 0.5rem;
+  --radius: 0.375rem;
 
-  /* Brooklyn College brand.
+  /* Brooklyn College brand — nothing outside this set.
+     Maroon #882346 and gold #f3bd48 are the brand colours; the neutrals are
+     the ones BC's own (Bootstrap-based) stylesheet uses.
      `maroon` is the fixed brand colour for SURFACES (bg-maroon, gradients).
      `maroon-ink` is the same colour for TEXT, lightened in dark mode —
      #882346 on the dark ground is only 1.97:1, far under the 4.5:1 floor. */
   --color-maroon: #882346;
   --color-maroon-ink: var(--maroon-ink);
-  --color-maroon-dark: #52152a;
-  --color-maroon-deep: #38001d;
-  --color-maroon-tint: #e7d3da;
   --color-gold: #f3bd48;
-  --color-gold-soft: #fdf2da;
-  --color-gold-deep: #614c1d;
-  --color-bc-orange: #ffa340;
-  --color-bc-red: #f24131;
-  --color-bc-blue: #0e3240;
-  --color-bc-green: #233935;
   --color-ink: #212529;
-  --color-surface: #f8f9fa;
+  --color-light: var(--secondary);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -56,17 +50,19 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+
+  --animate-slow-zoom: slow-zoom 32s ease-in-out infinite alternate;
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-marquee-slow: marquee 60s linear infinite;
+  --animate-marquee-reverse: marquee 60s linear infinite reverse;
+  --animate-float: float 4s ease-in-out infinite;
 }
 
 :root {
   --maroon: #882346;
   --maroon-ink: #882346;
-  --maroon-dark: #52152a;
-  --maroon-deep: #38001d;
   --gold: #f3bd48;
-  --gold-soft: #fdf2da;
   --ink: #212529;
-  --surface: #f8f9fa;
 
   --background: #ffffff;
   --foreground: #212529;
@@ -78,42 +74,47 @@
   --primary-foreground: #ffffff;
   --secondary: #f8f9fa;
   --secondary-foreground: #212529;
-  --muted: #f2f2f2;
-  /* 6.98:1 on white — BC's own #6c757d only manages 4.69:1 */
-  --muted-foreground: #545a60;
-  --accent: #fdf2da;
+  --muted: #f8f9fa;
+  /* BC's grey #6c757d is 4.48:1 on #f8f9fa, just under AA; #5c636a (the same
+     stylesheet's hover grey) is 5.9:1. */
+  --muted-foreground: #5c636a;
+  --accent: #f8f9fa;
   --accent-foreground: #212529;
-  --destructive: #f24131;
+  --destructive: #882346;
   --destructive-foreground: #ffffff;
   --border: #dee2e6;
   --input: #dee2e6;
   --ring: #882346;
+
+  /* De-emphasis gray for comparison bars (BC neutral). */
+  --chart-prior: #adb5bd;
 }
 
 .dark {
-  /* 7.0:1 on the dark card */
+  /* 7.0:1 on the dark ground */
   --maroon-ink: #d98fa5;
 
-  --background: #1b1114;
-  --foreground: #ffffff;
-  --card: #241619;
-  --card-foreground: #ffffff;
-  --popover: #241619;
-  --popover-foreground: #ffffff;
+  --background: #212529;
+  --foreground: #f8f9fa;
+  --card: #2b3035;
+  --card-foreground: #f8f9fa;
+  --popover: #2b3035;
+  --popover-foreground: #f8f9fa;
   --primary: #f3bd48;
-  --primary-foreground: #38001d;
-  --secondary: #2e1d22;
-  --secondary-foreground: #ffffff;
-  --muted: #2a1a1e;
-  /* 8.8:1 on the dark ground */
-  --muted-foreground: #b9b1b4;
+  --primary-foreground: #212529;
+  --secondary: #2b3035;
+  --secondary-foreground: #f8f9fa;
+  --muted: #2b3035;
+  --muted-foreground: #adb5bd;
   --accent: #882346;
   --accent-foreground: #ffffff;
-  --destructive: #f24131;
+  --destructive: #882346;
   --destructive-foreground: #ffffff;
-  --border: rgb(255 255 255 / 0.14);
-  --input: rgb(255 255 255 / 0.17);
+  --border: #495057;
+  --input: #495057;
   --ring: #f3bd48;
+
+  --chart-prior: #6c757d;
 }
 
 @layer base {
@@ -129,28 +130,39 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
-    /* 17px base with an open leading — the old 16px/1.5 ran tight for
-       long-form copy on the content pages. */
     font-size: 1.0625rem;
-    line-height: 1.65;
-    font-feature-settings: "ss01", "cv11";
+    line-height: 1.7;
     -webkit-font-smoothing: antialiased;
   }
 
-  /* Instrument Serif is a display face: gorgeous at hero scale, spindly and
-     hard to read below ~28px. Reserve it for h1/h2 and set the smaller
-     headings in Inter. */
+  /* Fraunces has an optical-size axis, so it holds up from 18px to hero
+     scale; SOFT rounds the terminals for a warmer editorial voice. */
   h1,
   h2 {
     font-family: var(--font-serif);
-    letter-spacing: -0.01em;
+    font-weight: 300;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    font-variation-settings: "SOFT" 30;
+  }
+
+  h1 em,
+  h2 em {
+    font-style: italic;
+    font-weight: 400;
+    font-variation-settings: "SOFT" 100;
+  }
+
+  .font-serif {
+    font-weight: 300;
+    font-variation-settings: "SOFT" 30;
   }
 
   h3,
   h4 {
     font-family: var(--font-sans);
     font-weight: 600;
-    letter-spacing: -0.005em;
+    letter-spacing: -0.01em;
     line-height: 1.3;
   }
 
@@ -164,10 +176,69 @@
   max-width: 1280px;
   margin-inline: auto;
   padding-inline: 1.5rem;
+
+  @media (width >= 64rem) {
+    padding-inline: 3.5rem;
+  }
+}
+
+/* Small uppercase mono label that opens a section. */
+@utility eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-maroon-ink);
 }
 
 @utility hairline {
-  border-bottom: 1px solid color-mix(in oklab, var(--foreground) 8%, transparent);
+  border-bottom: 1px solid color-mix(in oklab, var(--foreground) 12%, transparent);
+}
+
+@utility btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  border-radius: 999px;
+  background: var(--color-maroon);
+  color: #fff;
+  padding: 0.9rem 1.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition:
+    background 0.25s,
+    transform 0.25s,
+    box-shadow 0.25s;
+
+  &:hover {
+    background: color-mix(in srgb, var(--color-maroon) 85%, transparent);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 36px -10px rgb(136 35 70 / 0.45);
+  }
+}
+
+@utility btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--color-maroon-ink);
+  color: var(--color-maroon-ink);
+  padding: 0.85rem 1.65rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition:
+    background 0.25s,
+    color 0.25s;
+
+  &:hover {
+    background: var(--color-maroon);
+    border-color: var(--color-maroon);
+    color: #fff;
+  }
 }
 
 @utility gold-underline {
@@ -182,5 +253,71 @@
   }
   100% {
     background-position: -200% 0;
+  }
+}
+
+@keyframes slow-zoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes shine {
+  from {
+    transform: translateX(-120%) skewX(-20deg);
+  }
+  to {
+    transform: translateX(320%) skewX(-20deg);
+  }
+}
+
+/* A light sweep across a button every few seconds, to draw the eye to the
+   primary call to action. */
+@utility shine {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 35%;
+    background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.45), transparent);
+    animation: shine 4.5s ease-in-out infinite;
+    pointer-events: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-slow-zoom,
+  .animate-marquee,
+  .animate-marquee-slow,
+  .animate-marquee-reverse,
+  .animate-float,
+  .shine::after {
+    animation: none;
   }
 }

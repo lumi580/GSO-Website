@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
+import { INTEREST_FORM_URL } from "@/lib/links";
 
 const paths = [
   {
@@ -42,11 +42,11 @@ export default function GetInvolved() {
         description="The GSO is only as strong as the students who show up. Pick a role that fits your time and interests."
       />
 
-      <section className="py-20">
+      <section className="py-14 md:py-16">
         <div className="container-page grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {paths.map((path, i) => (
             <Reveal key={path.title} delay={i * 0.05}>
-              <div className="group rounded-2xl border border-border bg-card p-7 h-full hover:border-maroon/50 hover:shadow-lg transition-all">
+              <div className="group rounded-md border border-border bg-card p-7 h-full hover:border-maroon/50 hover:shadow-lg transition-all">
                 <div className="text-4xl font-serif text-maroon-ink">
                   {String(i + 1).padStart(2, "0")}
                 </div>
@@ -54,13 +54,15 @@ export default function GetInvolved() {
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   {path.description}
                 </p>
-                <Link
-                  to="/#contact"
+                <a
+                  href={INTEREST_FORM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-maroon-ink"
                 >
-                  Start
-                  <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
-                </Link>
+                  Fill out the interest form
+                  <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </a>
               </div>
             </Reveal>
           ))}

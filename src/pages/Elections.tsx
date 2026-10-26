@@ -21,13 +21,13 @@ export default function Elections() {
         description="Annual elections determine the Executive Board and representative seats."
       />
 
-      <section className="py-20">
+      <section className="py-14 md:py-16">
         <div className="container-page">
           <div className="grid lg:grid-cols-5 gap-4">
             {timeline.map((item, i) => (
               <Reveal key={item.step} delay={i * 0.06}>
-                <div className="rounded-2xl border border-border bg-card p-6 h-full">
-                  <div className="text-xs uppercase tracking-[0.12em] text-maroon-ink">
+                <div className="rounded-md border border-border bg-card p-6 h-full">
+                  <div className="font-mono text-[10.5px] uppercase tracking-[0.2em] text-maroon-ink">
                     {item.step}
                   </div>
                   <div className="mt-3 font-serif text-xl">{item.title}</div>
@@ -46,7 +46,7 @@ export default function Elections() {
           {guides.map((guide) => (
             <div
               key={guide}
-              className="rounded-2xl bg-card border border-border p-6"
+              className="rounded-md bg-card border border-border p-6"
             >
               <Vote className="h-5 w-5 text-maroon-ink" />
               <div className="mt-3 font-serif text-lg">{guide}</div>
