@@ -5,13 +5,10 @@ import {
   ArrowRight,
   ArrowUpRight,
   CalendarDays,
-  Cpu,
-  FlaskConical,
   HandCoins,
   Instagram,
   Mail,
   Megaphone,
-  Network,
   PartyPopper,
   Phone,
   UsersRound,
@@ -23,6 +20,7 @@ import ActivityGallery from "@/components/ActivityGallery";
 import BoardSlider from "@/components/BoardSlider";
 import HeroSlideshow from "@/components/HeroSlideshow";
 import CommitteeSeats from "@/components/CommitteeSeats";
+import ProposalBand from "@/components/ProposalBand";
 import { INTEREST_FORM_URL as JOIN_URL } from "@/lib/links";
 import { formatDay, formatTime, upcomingEvents } from "@/data/campusEvents";
 import { committeeCount } from "@/data/committees";
@@ -416,90 +414,7 @@ export default function Index() {
       </section>
 
       {/* GSO initiative: a dedicated graduate research & innovation lab */}
-      <section className="relative overflow-hidden bg-ink py-16 text-white md:py-24">
-        <div className="pointer-events-none absolute -left-32 top-1/4 h-[30rem] w-[30rem] rounded-full bg-maroon/45 blur-[120px]" />
-        <div className="pointer-events-none absolute inset-0 opacity-[0.05] [background-image:linear-gradient(white_1px,transparent_1px),linear-gradient(90deg,white_1px,transparent_1px)] [background-size:44px_44px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
-
-        <div className="container-page relative grid items-center gap-14 lg:grid-cols-12">
-          <Reveal className="lg:col-span-7">
-            <div className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 font-mono text-[10.5px] uppercase tracking-[0.2em] text-gold">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-gold" />
-              </span>
-              This Year's Proposal
-            </div>
-            <h2 className="mt-6 text-5xl md:text-7xl leading-[0.95] text-balance">
-              Grad students need a <em className="text-gold">lab of their own.</em>
-            </h2>
-            <p className="mt-6 max-w-xl text-lg md:text-xl leading-relaxed text-white/75">
-              The GSO is proposing a dedicated graduate lab for research and
-              innovation — and taking the case to the college administration.
-            </p>
-
-            <ul className="mt-8 grid gap-3 sm:grid-cols-3">
-              {[
-                { icon: FlaskConical, label: "Dedicated research space" },
-                { icon: Cpu, label: "Compute & AI tools" },
-                { icon: Network, label: "Cross-discipline collaboration" },
-              ].map((item, i) => (
-                <motion.li
-                  key={item.label}
-                  initial={{ opacity: 0, y: 14 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
-                  className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3.5 text-[14.5px] backdrop-blur-sm"
-                >
-                  <item.icon className="h-5 w-5 shrink-0 text-gold" />
-                  {item.label}
-                </motion.li>
-              ))}
-            </ul>
-
-            <Link
-              to="/initiatives"
-              className="shine group mt-9 inline-flex items-center gap-2.5 rounded-full bg-gold px-7 py-4 text-[14px] font-medium text-ink transition-transform hover:-translate-y-0.5"
-            >
-              See the Proposal
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </Reveal>
-
-          {/* Orbiting "lab" graphic */}
-          <Reveal delay={0.15} className="relative mx-auto hidden aspect-square w-full max-w-[26rem] lg:col-span-5 lg:block">
-            {[100, 72, 44].map((size, i) => (
-              <div
-                key={size}
-                className="absolute rounded-full border border-white/10"
-                style={{ inset: `${(100 - size) / 2}%` }}
-              >
-                <div
-                  className="absolute inset-0 animate-spin"
-                  style={{
-                    animationDuration: `${18 + i * 8}s`,
-                    animationDirection: i % 2 ? "reverse" : "normal",
-                  }}
-                >
-                  <span
-                    className={`absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full ${
-                      i === 1
-                        ? "h-3 w-3 bg-maroon-ink shadow-[0_0_18px_rgb(217_143_165/0.9)]"
-                        : "h-2.5 w-2.5 bg-gold shadow-[0_0_18px_rgb(243_189_72/0.9)]"
-                    }`}
-                  />
-                </div>
-              </div>
-            ))}
-            <div className="absolute inset-[34%] flex flex-col items-center justify-center rounded-full bg-gradient-to-br from-maroon to-ink text-center shadow-[0_0_60px_-10px_rgb(136_35_70/0.9)]">
-              <FlaskConical className="h-7 w-7 text-gold" />
-              <span className="mt-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-white/80">
-                Grad Lab
-              </span>
-            </div>
-          </Reveal>
-        </div>
-      </section>
+      <ProposalBand />
 
       {/* Upcoming events */}
       <section id="events" className="py-16 md:py-20">
