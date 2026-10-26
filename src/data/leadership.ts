@@ -1,6 +1,7 @@
 import adilPhoto from "@/assets/team/adil-hussain-mughal.jpg";
 import lumbardhPhoto from "@/assets/team/lumbardh-halitjaha.jpg";
 import aniquePhoto from "@/assets/team/anique-gulston.jpg";
+import tekeyahPhoto from "@/assets/team/tekeyah-howell.jpg";
 
 /**
  * The people currently serving (titles and photos from the GSO page on
@@ -45,6 +46,7 @@ export const members: Member[] = [
   {
     name: "Tekeyah Howell",
     role: "Secretary",
+    photo: tekeyahPhoto,
     committees: [
       "Student Services Corporation Advisory Committee",
       "Student Center Advisory Committee",
